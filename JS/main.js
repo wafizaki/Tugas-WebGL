@@ -93,7 +93,7 @@ async function main() {
     m4.addVectors(extents.min, m4.scaleVector(range, 0.5)),
     -1
   );
-  const cameraTarget = [0, 0, 15];
+  const cameraTarget = [0, 0, 30];
   // figure out how far away to move the camera so we can likely
   // see the object.
   const radius = m4.length(range) * 1.2;
@@ -126,7 +126,7 @@ async function main() {
     const view = m4.inverse(camera);
 
     const sharedUniforms = {
-      u_lightDirection: m4.normalize([0, -1, 4]),
+      u_lightDirection: m4.normalize([-3, 3, 12]),
       u_view: view,
       u_projection: projection,
       u_viewWorldPosition: cameraPosition,
